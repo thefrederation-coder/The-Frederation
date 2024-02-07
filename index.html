@@ -31,7 +31,7 @@
         }
 
         .clock-face {
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -40,6 +40,9 @@
             border-radius: 50%;
             border: 2px solid #444;
             box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hour-hand,
@@ -122,8 +125,4 @@
         }
 
         .hour-marker:nth-child(2) {
-            transform: translateX(-43.3%) rotate(30deg);
-        }
-
-        .hour-marker:nth-child(3) {
-            transform: translateX(-35.5%) rot
+            transform: translateX(-43.3%) rotate(30
