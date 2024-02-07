@@ -19,13 +19,32 @@
         p {
             color: #666;
         }
+
+        .grandfather-clock {
+            width: 100px;
+            height: 200px;
+            background: url('https://source.unsplash.com/random/100x200') no-repeat;
+            background-size: cover;
+            position: relative;
+            animation: clock-animation 2s linear infinite;
+        }
+
+        @keyframes clock-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="grandfather-clock"></div>
     <h1>Welcome to The Frederation</h1>
     <p>This site is a tribute to our beloved Grandfather, Fred.</p>
     <p>The Frederation is an experimental project with a focus on creating a lightweight, versatile operating system that can run on various devices, from clocks to more modern systems.</p>
-    <p><strong>Important:</strong> We do not condone any illegal activities. Please use this project responsibly and at your own risk. The creators of The Frederation will not be held responsible for any misuse or unintended consequences.</p>
+    <p><strong>Important:</strong> We do not condone any illegal activities or the use of this project to make a mockery of Fred. Please use this project responsibly and at your own risk. The creators of The Frederation will not be held responsible for any misuse or unintended consequences.</p>
     <p>The source code and backups are user-driven. We encourage you to contribute and help us improve the project.</p>
     <p>Stay tuned for updates and releases.</p>
 </body>
