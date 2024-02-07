@@ -28,6 +28,22 @@
             font-size: 48px;
             font-weight: bold;
         }
+
+        .clock-container::before {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 200px;
+            border: 2px solid #444;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .clock-container span {
+            display: inline-block;
+            line-height: 1;
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
