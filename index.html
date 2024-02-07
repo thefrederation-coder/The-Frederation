@@ -20,109 +20,41 @@
             color: #666;
         }
 
-        .grandfather-clock {
-            width: 100px;
+        .clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 200px;
-            background: url('https://source.unsplash.com/random/100x200?clock') no-repeat;
-            background-size: cover;
-            position: relative;
-            animation: clock-animation 2s linear infinite;
-        }
-
-        @keyframes clock-animation {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .clock-face {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .clock-face:before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-90deg);
-            width: 10px;
-            height: 200px;
-            background-color: #444;
-        }
-
-        .hour-hand,
-        .minute-hand,
-        .second-hand {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: bottom;
-            transform: translate(-50%, -50%);
-            border-left: 2px solid #444;
-            border-right: 2px solid #444;
-        }
-
-        .hour-hand {
-            height: 40%;
-            width: 6px;
-            top: 35%;
-            animation: hour-hand 12s linear infinite;
-        }
-
-        .minute-hand {
-            height: 55%;
-            width: 4px;
-            top: 30%;
-            animation: minute-hand 1s linear infinite;
-        }
-
-        .second-hand {
-            height: 65%;
-            width: 2px;
-            top: 25%;
-            animation: second-hand 0.5s linear infinite;
-        }
-
-        @keyframes hour-hand {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes minute-hand {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes second-hand {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+            font-size: 48px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="grandfather-clock">
-        <div class="clock-face">
-            <div class="hour-hand"></div>
-            <div class="minute-hand"></div>
-            <div class="second-hand"></div>
-        </div>
+    <div class="clock-container">
+        <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
     </div>
     <h1>Welcome to The Frederation</h1>
-    <p>This site is a
+    <p>This site is a tribute to our beloved Grandfather, Fred.</p>
+    <p>The Frederation is an experimental project with a focus on creating a lightweight, versatile operating system that can run on various devices, from clocks to more modern systems.</p>
+    <p><strong>Important:</strong> We do not condone any illegal activities or the use of this project to make a mockery of Fred. Please use this project responsibly and at your own risk. The creators of The Frederation will not be held responsible for any misuse or unintended consequences.</p>
+    <p>The source code and backups are user-driven. We encourage you to contribute and help us improve the project.</p>
+    <p>Stay tuned for updates and releases.</p>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, "0");
+            const minutes = now.getMinutes().toString().padStart(2, "0");
+            const seconds = now.getSeconds().toString().padStart(2, "0");
+
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
