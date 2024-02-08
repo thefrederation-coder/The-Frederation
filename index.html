@@ -33,8 +33,10 @@
     </div>
 
     <!-- SoundCloud Widget API Script -->
+    <script src="https://w.soundcloud.com/player/api.js" async></script>
     <script>
-        (function() {
+        // Ensure SoundCloud API is loaded before initializing widget
+        window.addEventListener('DOMContentLoaded', function() {
             // Initialize SoundCloud widget
             var widgetIframe = document.getElementById('soundcloud_widget');
             var widget = SC.Widget(widgetIframe);
@@ -60,7 +62,7 @@
             document.getElementById('stop_music_button').addEventListener('click', function() {
                 widget.pause();
             });
-        })();
+        });
     </script>
 
     <!-- Button to stop the music -->
