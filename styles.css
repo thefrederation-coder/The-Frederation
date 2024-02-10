@@ -1,25 +1,15 @@
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-  margin: 0;
-}
-
 .vinyl-link {
   display: inline-block;
   padding: 20px 30px;
   background-color: #333;
   color: #fff;
   text-decoration: none;
-  font-size: 24px; /* Increased font size for better readability */
+  font-size: 24px;
   border-radius: 50px;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
-  z-index: 1; /* Ensures text is on top of other elements */
+  z-index: 1;
 }
 
 .vinyl-link:hover {
@@ -27,40 +17,22 @@ body {
 }
 
 .vinyl-link::before {
-  content: '';
+  content: 'Genre Fluid';
   position: absolute;
-  width: 120px; /* Increased size of vinyl record */
-  height: 120px; /* Increased size of vinyl record */
-  background-color: #000;
+  width: 120px;
+  height: 120px;
+  background-color: #ff5722; /* Adjust color to match your label */
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1; /* Moved behind the link text */
-}
-
-.vinyl-link::after {
-  content: '';
-  position: absolute;
-  width: 90px; /* Increased size of record label */
-  height: 90px; /* Increased size of record label */
-  background-color: #ff5722;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0; /* Positioned behind the vinyl record */
-}
-
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-.vinyl-link:hover::after {
-  animation: spin 2s linear infinite;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 5px;
+  box-sizing: border-box;
 }
