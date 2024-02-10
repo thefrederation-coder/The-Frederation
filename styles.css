@@ -14,11 +14,12 @@ body {
   background-color: #333;
   color: #fff;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px; /* Increased font size for better readability */
   border-radius: 50px;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
+  z-index: 1; /* Ensures text is on top of other elements */
 }
 
 .vinyl-link:hover {
@@ -28,26 +29,27 @@ body {
 .vinyl-link::before {
   content: '';
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 120px; /* Increased size of vinyl record */
+  height: 120px; /* Increased size of vinyl record */
   background-color: #000;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -1; /* Moved behind the link text */
 }
 
 .vinyl-link::after {
   content: '';
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 90px; /* Increased size of record label */
+  height: 90px; /* Increased size of record label */
   background-color: #ff5722;
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 0; /* Positioned behind the vinyl record */
 }
 
 @keyframes spin {
